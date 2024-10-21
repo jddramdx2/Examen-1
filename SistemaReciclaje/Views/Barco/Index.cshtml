@@ -1,0 +1,24 @@
+﻿@model IEnumerable<SistemaReciclaje.Models.Barco>
+
+<h1>Lista de Barcos</h1>
+<a href="/Barco/Create" class="btn btn-primary">Agregar Nuevo Barco</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Número Único</th>
+            <th>Fecha de Ingreso</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var barco in Model)
+        {
+            <tr>
+                <td>@barco.ID_Barco</td>
+                <td>@barco.Numero_Unico</td>
+                <td>@barco.Fecha_Ingreso.ToShortDateString()</td>
+            </tr>
+        }
+    </tbody>
+</table>
